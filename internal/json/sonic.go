@@ -13,7 +13,7 @@ var (
 		SortMapKeys:      true,  // Critical for gzip efficiency
 		CompactMarshaler: true,  // Avoids extra whitespace
 		EscapeHTML:       false, // Optional
-	}
+	}.Froze()
 	// Marshal is exported by gin/json package.
 	Marshal = json.Marshal
 	// Unmarshal is exported by gin/json package.
