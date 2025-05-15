@@ -10,9 +10,10 @@ import "github.com/bytedance/sonic"
 
 var (
 	json = sonic.Config{
-		SortMapKeys:      true,  // Critical for gzip efficiency
-		CompactMarshaler: true,  // Avoids extra whitespace
-		EscapeHTML:       false, // Optional
+		SortMapKeys:          true,  // Critical for gzip efficiency
+		CompactMarshaler:     true,  // Avoids extra whitespace
+		EscapeHTML:           false, // Optional
+		NoQuoteTextMarshaler: true,  // Avoids extra quotes
 	}.Froze()
 	// Marshal is exported by gin/json package.
 	Marshal = json.Marshal
